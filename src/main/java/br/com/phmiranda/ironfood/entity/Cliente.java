@@ -9,7 +9,6 @@ package br.com.phmiranda.ironfood.entity;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +24,6 @@ public class Cliente {
     private Long id;
 
     private String nome;
-
     private String endereco;
 
     @OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
