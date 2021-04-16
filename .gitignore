@@ -13,7 +13,7 @@ mvnw.cmd
 mvnw
 
 # comentário.
-HELP.md
+src/main/resources/application.properties
 
 # comentário.
 *.iml
