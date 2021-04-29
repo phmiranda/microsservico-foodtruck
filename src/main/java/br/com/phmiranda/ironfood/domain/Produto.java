@@ -5,7 +5,7 @@
  * Date: 15/06/2020
  */
 
-package br.com.phmiranda.ironfood.entity;
+package br.com.phmiranda.ironfood.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

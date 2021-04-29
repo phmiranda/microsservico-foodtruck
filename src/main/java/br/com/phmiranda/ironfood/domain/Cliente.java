@@ -5,7 +5,7 @@
  * Date: 15/06/2020
  */
 
-package br.com.phmiranda.ironfood.entity;
+package br.com.phmiranda.ironfood.domain;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;

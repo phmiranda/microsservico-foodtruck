@@ -7,7 +7,7 @@
 
 package br.com.phmiranda.ironfood.repository;
 
-import br.com.phmiranda.ironfood.entity.Pedido;
+import br.com.phmiranda.ironfood.domain.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PedidoRepository extends JpaRepository<Pedido,Long> {
