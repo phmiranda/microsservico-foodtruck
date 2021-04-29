@@ -1,8 +1,8 @@
 /**
- * Project: ironfood
- * Date: 15/06/2020
  * User: phmiranda
- * Descrição: classe responsável por mapear os atributos do cliente.
+ * Project: ironfood
+ * Description: this class execute...!
+ * Date: 15/06/2020
  */
 
 package br.com.phmiranda.ironfood.entity;
