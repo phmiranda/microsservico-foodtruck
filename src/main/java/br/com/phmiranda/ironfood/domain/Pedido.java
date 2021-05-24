@@ -26,9 +26,9 @@ public class Pedido {
     private Long id;
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private Date data;
+    private Date dataLancamento;
 
-    private Double total;
+    private Double valorTotal;
 
     @ManyToOne(optional = true)
     private Cliente cliente;
@@ -37,7 +37,7 @@ public class Pedido {
     @Cascade(CascadeType.MERGE)
     private List<Produto> produto;
 
-    // Getters e Setters
+    // GETTERS E SETTERS
     public Long getId() {
         return id;
     }
@@ -46,20 +46,20 @@ public class Pedido {
         this.id = id;
     }
 
-    public Date getData() {
-        return data;
+    public Date getDataLancamento() {
+        return dataLancamento;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDataLancamento(Date dataLancamento) {
+        this.dataLancamento = dataLancamento;
     }
 
-    public Double getTotal() {
-        return total;
+    public Double getValorTotal() {
+        return valorTotal;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public Cliente getCliente() {
