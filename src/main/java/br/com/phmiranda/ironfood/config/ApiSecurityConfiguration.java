@@ -6,8 +6,8 @@
  * Date: 07/07/2021
  */
 
-package br.com.phmiranda.ironfood.domain.dto;
+package br.com.phmiranda.ironfood.config;
 
-public class PedidoDto {
-    // comment
+public class ApiSecurityConfiguration {
+    // include your code here.
 }

@@ -7,59 +7,36 @@
 
 package br.com.phmiranda.ironfood.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.FetchType;
+
+import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "clientes")
+@Getter
+@Setter
+@Entity
+@Table(name = "clientes")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "endereco")
     private String endereco;
 
     @OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
     @Cascade(CascadeType.ALL)
-    private List<Pedido> pedido;
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public List<Pedido> getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(List<Pedido> pedido) {
-        this.pedido = pedido;
-    }
+    @Column(name = "pedido_id")
+    private List<Pedido> pedidos;
 }

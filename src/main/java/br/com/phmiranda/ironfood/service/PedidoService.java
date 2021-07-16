@@ -1,9 +1,11 @@
-/**
- * User: Pedro
+/*
+ * Author: Pedro
  * Project: ironfood
- * Description: this class execute...!
- * Date: 24/05/2021
+ * User Story: HUXXX - TITLE OF USER HISTORY
+ * Description: DESCRIPTION OF USER HISTORY
+ * Date: 07/07/2021
  */
+
 package br.com.phmiranda.ironfood.service;
 
 import br.com.phmiranda.ironfood.repository.PedidoRepository;

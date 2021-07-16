@@ -7,74 +7,42 @@
 
 package br.com.phmiranda.ironfood.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.format.annotation.DateTimeFormat;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "pedidos")
+@Getter
+@Setter
+@Entity
+@Table(name = "pedidos")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @Column(name = "data_lancamento")
     private Date dataLancamento;
 
+    @Column(name = "valor_total")
     private Double valorTotal;
 
     @ManyToOne(optional = true)
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @ManyToMany
     @Cascade(CascadeType.MERGE)
+    @JoinColumn(name = "produto_id")
     private List<Produto> produto;
-
-    // GETTERS E SETTERS
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDataLancamento() {
-        return dataLancamento;
-    }
-
-    public void setDataLancamento(Date dataLancamento) {
-        this.dataLancamento = dataLancamento;
-    }
-
-    public Double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(Double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public List<Produto> getProduto() {
-        return produto;
-    }
-
-    public void setProduto(List<Produto> produto) {
-        this.produto = produto;
-    }
 }

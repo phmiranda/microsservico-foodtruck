@@ -7,43 +7,28 @@
 
 package br.com.phmiranda.ironfood.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity(name = "produtos")
+import javax.persistence.*;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "produtos")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
-    private String nome;
+    @Column(name = "nome_produto")
+    private String nomeProduto;
 
-    private Double preco;
-
-    // Getters e Seters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
+    @Column(name = "valor_unitario")
+    private Double valorUnitario;
 }
