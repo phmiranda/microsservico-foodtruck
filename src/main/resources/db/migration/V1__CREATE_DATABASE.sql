@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS db_ironfood;
+CREATE DATABASE IF NOT EXISTS db_webservice_ironfoodtruck;
